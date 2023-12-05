@@ -167,6 +167,18 @@ class SlackMessage implements Arrayable
     }
 
     /**
+     * Add a new Rich text block to the message.
+     */
+    public function richTextBlock(Closure $callback): self
+    {
+        $this->blocks[] = $block = new RichTextBlock();
+
+        $callback($block);
+
+        return $this;
+    }
+
+    /**
      * Set a custom image icon the message should use.
      */
     public function emoji(string $emoji): self
