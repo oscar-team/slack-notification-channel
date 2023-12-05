@@ -2,6 +2,7 @@
 
 namespace Illuminate\Notifications\Slack\BlockKit\Blocks;
 
+use Closure;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Notifications\Slack\BlockKit\Composites\RichTextList;
 use Illuminate\Notifications\Slack\BlockKit\Composites\RichTextPreformatted;

@@ -2,6 +2,7 @@
 
 namespace Illuminate\Notifications\Slack\BlockKit\Composites;
 
+use Closure;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Notifications\Slack\Contracts\ObjectContract;
 use InvalidArgumentException;

@@ -9,6 +9,7 @@ use Illuminate\Notifications\Slack\BlockKit\Blocks\ContextBlock;
 use Illuminate\Notifications\Slack\BlockKit\Blocks\DividerBlock;
 use Illuminate\Notifications\Slack\BlockKit\Blocks\HeaderBlock;
 use Illuminate\Notifications\Slack\BlockKit\Blocks\ImageBlock;
+use Illuminate\Notifications\Slack\BlockKit\Blocks\RichTextBlock;
 use Illuminate\Notifications\Slack\BlockKit\Blocks\SectionBlock;
 use Illuminate\Notifications\Slack\Contracts\BlockContract;
 use Illuminate\Support\Arr;
