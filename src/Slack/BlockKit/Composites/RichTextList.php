@@ -29,6 +29,13 @@ class RichTextList implements ObjectContract
     protected array $elements = [];
 
     /**
+     * The style for the element
+     *
+     * Can be one of "bullet" or "ordered"
+     */
+    protected string $style = 'bullet';
+
+    /**
      * Set the block identifier.
      */
     public function id(string $id): self
@@ -51,6 +58,16 @@ class RichTextList implements ObjectContract
     }
 
     /**
+     * Sets the style
+     */
+    public function style(string $style): self
+    {
+        $this->style = $style;
+
+        return $this;
+    }
+
+    /**
      * Get the instance as an array.
      */
     public function toArray(): array
@@ -60,11 +77,11 @@ class RichTextList implements ObjectContract
         }
 
         if (empty($this->elements)) {
-            throw new LogicException('There must be at least one element in each rich text preformatted block.');
+            throw new LogicException('There must be at least one element in each rich text list block.');
         }
 
         if (count($this->elements) > 10) {
-            throw new LogicException('There is a maximum of 10 elements in each rich text preformatted block.');
+            throw new LogicException('There is a maximum of 10 elements in each rich text list block.');
         }
 
         $optionalFields = array_filter([
@@ -73,6 +90,7 @@ class RichTextList implements ObjectContract
 
         return array_merge([
             'type' => 'rich_text_list',
+            'style' => $this->style,
             'elements' => array_map(fn (Arrayable $element) => $element->toArray(), $this->elements),
         ], $optionalFields);
     }

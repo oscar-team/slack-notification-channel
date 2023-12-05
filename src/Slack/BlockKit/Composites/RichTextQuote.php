@@ -57,11 +57,11 @@ class RichTextQuote implements ObjectContract
         }
 
         if (empty($this->elements)) {
-            throw new LogicException('There must be at least one element in each rich text preformatted block.');
+            throw new LogicException('There must be at least one element in each rich text quote block.');
         }
 
         if (count($this->elements) > 10) {
-            throw new LogicException('There is a maximum of 10 elements in each rich text preformatted block.');
+            throw new LogicException('There is a maximum of 10 elements in each rich text quote block.');
         }
 
         $optionalFields = array_filter([
